@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101a20" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%231a302e' stroke='%23d7ce9e' stroke-width='2'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia' font-size='39' fill='%23d7ce9e'%3EW%3C/text%3E%3C/svg%3E" />
+  <title>Wildhaven — Into the quiet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game" aria-label="Wildhaven open world game">
+    <canvas id="world"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Wildhaven home"><span class="brand-mark">W</span><span>WILDHAVEN<small>FIELD NOTES · 01</small></span></a>
+      <div class="top-center"><span class="live-dot"></span><span id="regionLabel">NORTH CASCADE · 06:42 AM</span></div>
+      <button id="soundBtn" class="icon-btn" aria-label="Toggle ambient sound"><span id="soundIcon">♫</span></button>
+    </header>
+    <section class="hud" id="hud" aria-live="polite">
+      <div class="objective-card"><div class="eyebrow"><span class="sun-icon">✳</span> YOUR FIRST TRAIL</div><h2 id="objectiveTitle">Find the overlook</h2><p id="objectiveText">Follow the trail to the lookout above the lake.</p><div class="progress-line"><i id="progressFill"></i></div><div class="objective-foot"><span id="distanceLabel">0.8 KM TO GO</span><span>↗</span></div></div>
+      <div class="compass"><span>N</span><div class="compass-line"></div><span class="compass-degree" id="heading">000°</span></div>
+      <div class="map-card"><canvas id="minimap" width="180" height="180"></canvas><div class="map-label">YOU ARE HERE <span>◉</span></div></div>
+    </section>
+    <div class="bottom-hint" id="hint"><span class="keycap">W</span><span class="keycap">A</span><span class="keycap">S</span><span class="keycap">D</span><span>TO EXPLORE</span><b>·</b><span>DRAG TO LOOK</span></div>
+    <div class="touch-controls" id="touchControls">
+      <div class="joystick" id="joystick"><div class="joy-knob" id="joyKnob"></div></div>
+      <div class="touch-right"><button id="runBtn" class="touch-action">RUN <span>↗</span></button><button id="lookBtn" class="touch-look" aria-label="Look around">⤢</button></div>
+    </div>
+    <div class="toast" id="toast"></div>
+    <section class="intro" id="intro">
+      <div class="intro-content">
+        <div class="season-tag"><span></span> A WORLD WAITING TO BE FOUND</div>
+        <h1>Find your<br><em>wild</em> side.</h1>
+        <p>Take the long way home. Wander through old-growth forest, follow the water, and see where the trail leads.</p>
+        <button id="beginBtn" class="begin-btn"><span>START EXPLORING</span><i>↗</i></button>
+        <div class="intro-meta"><div><strong>01</strong><span>OPEN WORLD</span></div><div><strong>∞</strong><span>YOUR OWN PACE</span></div><div><strong>06:42</strong><span>FIRST LIGHT</span></div></div>
+      </div>
+      <div class="intro-bottom"><span>EVERGREEN VALLEY, CASCADIA</span><span>USE HEADPHONES FOR THE FULL EXPERIENCE</span></div>
+    </section>
+    <div class="pause-screen" id="pauseScreen"><div><span class="eyebrow">TAKE YOUR TIME</span><h2>Paused</h2><p>The valley will be right here.</p><button id="resumeBtn" class="begin-btn"><span>BACK TO THE TRAIL</span><i>↗</i></button></div></div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
